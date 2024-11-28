@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maraton Kampus 2024</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="font navbar-brand" href="index.html">Maraton Kampus</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#about">Tentang</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#categories">Kategori</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#profil">Profil</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-outline-light fw-bold me-2 custon-btn-hover" data-bs-toggle="modal"
+                    data-bs-target="#login">
+                    Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal">
+                <div class="modal-header px-4">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control custom-input" id="username"
+                                aria-describedby="username" placeholder="Username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control custom-input" id="password"
+                                placeholder="Password">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary w-75 custom-btn">Login</button>
+                    <p class="mt-3 text-muted">Belum punya akun?
+                        <button class="m-0 p-0 border-0 pl-1 text-primary custom-bg" data-bs-toggle="modal"
+                            data-bs-target="#register">Daftar di sini</button>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content custom-modal">
+                <div class="modal-header px-4">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Register</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control custom-input" id="username"
+                                        placeholder="Username">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control custom-input" id="email"
+                                        placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control custom-input" id="password"
+                                        placeholder="Password">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control custom-input" id="confirmPassword"
+                                        placeholder="Confirm Password">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex row justify-content-center">
+                    <button type="button" class="btn btn-primary w-50 custom-btn">Register</button>
+                    <p class="mt-3 text-muted text-center">Sudah punya akun?
+                        <button class="m-0 p-0 border-0 pl-1 text-primary custom-bg" data-bs-toggle="modal"
+                            data-bs-target="#login">Login</button>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-text text-white">
+                <h1 class="font-dua display-1 fw-bold mb-4">Maraton Kampus 2024</h1>
+                <p class="lead mb-4">Tantang Dirimu dalam Lomba Lari 5K, 10K, dan 15K!</p>
+                <a href="#categories" class="btn btn-info btn-lg btn-register">
+                    Daftar Sekarang <i class="fas fa-running ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="mt-5 pt-5 mb-0">
+        <div class="container mt-5">
+            <div class="text-center mb-4">
+                <h1 class="font">Tentang Maraton Kampus</h1>
+                <p class="text-muted">Berlari bersama, menuju kebersamaan dan kesehatan.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p>
+                        Selamat datang di <strong>Maraton Kampus</strong> — ajang lari yang dirancang untuk
+                        merayakan semangat kebersamaan, kesehatan, dan keberanian! Acara ini mengundang mahasiswa,
+                        dosen, alumni, dan masyarakat umum untuk merasakan energi positif dari olahraga sambil
+                        menjelajahi
+                        keindahan lingkungan kampus.
+                    </p>
+                    <p>
+                        Maraton Kampus hadir dengan tiga kategori jarak: <strong>5K, 10K, dan 15K</strong>, sehingga
+                        setiap peserta
+                        dapat memilih tantangan sesuai kemampuan mereka. Tidak hanya sekadar perlombaan, acara ini juga
+                        merupakan
+                        momen untuk membangun solidaritas, mempererat hubungan, serta mempromosikan gaya hidup sehat dan
+                        aktif.
+                    </p>
+                    <h3 class="mt-4">Mengapa Harus Ikut?</h3>
+                    <ul>
+                        <li><strong>Kesehatan & Kebugaran:</strong> Nikmati manfaat olahraga untuk tubuh dan pikiran
+                            Anda.</li>
+                        <li><strong>Rasa Kebersamaan:</strong> Rasakan kebersamaan dengan peserta lain di sepanjang
+                            perjalanan Anda.</li>
+                        <li><strong>Rute yang Menarik:</strong> Menyusuri sudut-sudut kampus yang penuh cerita dan
+                            kenangan.</li>
+                        <li><strong>Hadiah & Penghargaan:</strong> Raih medali finisher, sertifikat, dan hadiah menarik
+                            untuk pemenang di setiap kategori.</li>
+                    </ul>
+                    <p>
+                        Acara ini juga menjadi bagian dari upaya kami untuk mendukung kegiatan kampus yang
+                        berkelanjutan,
+                        dengan sebagian hasil dari pendaftaran akan disalurkan untuk kegiatan sosial dan pengembangan
+                        fasilitas kampus.
+                    </p>
+                    <div class="text-center my-4">
+                        <blockquote class="blockquote">
+                            <p class="mb-0"><em>"Langkah kecilmu hari ini adalah lompatan besar menuju masa depan yang
+                                    lebih sehat!"</em></p>
+                        </blockquote>
+                    </div>
+                    <p class="text-center">
+                        Mari bergabung dalam <strong>Maraton Kampus</strong> dan jadilah bagian dari gerakan yang
+                        menginspirasi!
+                        Ayo kita berlari bersama untuk kesehatan, prestasi, dan kebanggaan!
+                    </p>
+                </div>
+            </div>
+            <div class="card-container py-5">
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/gambar4.jpg" alt="Maraton Kampus" class="img-about rounded">
+                            <p class="text-muted mt-2">IPB RUN II</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/gambar5.jpeg" alt="Maraton Kampus" class="img-about rounded">
+                            <p class="text-muted mt-2">Unair University</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/gambar6.jpg" alt="Maraton Kampus" class="img-about rounded">
+                            <p class="text-muted mt-2">BNI-UI Half Marathon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/gambar1.jpg" alt="Maraton Kampus" class="img-about rounded">
+                            <p class="text-muted mt-2">Tsinghua University</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/gambar2.jpg" alt="Maraton Kampus" class="img-about rounded">
+                            <p class="text-muted mt-2">China University</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/gambar3.png" alt="Maraton Kampus" class="img-about rounded">
+                            <p class="text-muted mt-2">Nankai University</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="pt-5">
+        <div class="container mt-5">
+            <h2 class="font text-center mb-5">Kategori Lomba</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card category-card h-100 custom-bg-semi">
+                        <div class="card-body text-center text-white">
+                            <div class="display-4 text-info mb-3">
+                                <i class="fas fa-walking"></i>
+                            </div>
+                            <h3 class="card-title">5K</h3>
+                            <p class="card-text">Cocok untuk pemula dan recreational runners</p>
+                            <p class="h4 text-white mb-4">Rp 150.000</p>
+                            <button type="button" class="btn btn-info btn-register" data-bs-toggle="modal"
+                                data-bs-target="#product1">
+                                Pilih 5K <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="product1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content custom-modal">
+                            <div class="modal-header px-4">
+                                <h1 class="font modal-title fs-5" id="exampleModalLabel">Formulir Pendaftaran Maraton
+                                    Kampus
+                                    5K</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                                                <input type="text" class="form-control" id="nama_lengkap"
+                                                    placeholder="Nama Lengkap">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
+                                                <input type="date" class="form-control" id="tanggalLahir" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="email"
+                                                    placeholder="contoh@email.com" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="harga" class="form-label">Harga</label>
+                                                <input type="text" class="form-control" id="harga" value="Rp. 150.000"
+                                                    disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label">Jenis Kelamin</label>
+                                                <div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="jenisKelamin"
+                                                            id="lakiLaki" value="Laki-laki" required>
+                                                        <label class="form-check-label" for="lakiLaki">
+                                                            Laki-laki
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="jenisKelamin"
+                                                            id="perempuan" value="Perempuan" required>
+                                                        <label class="form-check-label" for="perempuan">
+                                                            Perempuan
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="ukuranKaos" class="form-label">Ukuran Kaos</label>
+                                                <select class="form-select" id="ukuranKaos" required>
+                                                    <option value="">Pilih ukuran kaos</option>
+                                                    <option value="S">S</option>
+                                                    <option value="M">M</option>
+                                                    <option value="L">L</option>
+                                                    <option value="XL">XL</option>
+                                                    <option value="XXL">XXL</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="nomorTelepon" class="form-label">Nomor
+                                                    Telepon/WhatsApp</label>
+                                                <input type="tel" class="form-control" id="nomorTelepon"
+                                                    placeholder="081234567890" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input" id="persetujuan"
+                                                    required>
+                                                <label class="form-check-label" for="persetujuan">
+                                                    Saya menyatakan bahwa saya dalam kondisi sehat dan menyetujui syarat
+                                                    & ketentuan.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Daftar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card category-card h-100 custom-bg-semi">
+                        <div class="card-body text-center text-white">
+                            <div class="display-4 text-info mb-3">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <h3 class="card-title">10K</h3>
+                            <p class="card-text">Untuk runner dengan pengalaman menengah</p>
+                            <p class="h4 text-white mb-4">Rp 250.000</p>
+                            <button type="button" class="btn btn-info btn-register" data-bs-toggle="modal"
+                                data-bs-target="#product2">
+                                Pilih 10K <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="product2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content custom-modal">
+                            <div class="modal-header px-4">
+                                <h1 class="font modal-title fs-5" id="exampleModalLabel">Formulir Pendaftaran Maraton
+                                    Kampus
+                                    10K</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                                                <input type="text" class="form-control" id="nama_lengkap"
+                                                    placeholder="Nama Lengkap">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
+                                                <input type="date" class="form-control" id="tanggalLahir" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="email"
+                                                    placeholder="contoh@email.com" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="harga" class="form-label">Harga</label>
+                                                <input type="text" class="form-control" id="harga" value="Rp. 250.000"
+                                                    disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label">Jenis Kelamin</label>
+                                                <div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="jenisKelamin"
+                                                            id="lakiLaki" value="Laki-laki" required>
+                                                        <label class="form-check-label" for="lakiLaki">
+                                                            Laki-laki
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="jenisKelamin"
+                                                            id="perempuan" value="Perempuan" required>
+                                                        <label class="form-check-label" for="perempuan">
+                                                            Perempuan
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="ukuranKaos" class="form-label">Ukuran Kaos</label>
+                                                <select class="form-select" id="ukuranKaos" required>
+                                                    <option value="">Pilih ukuran kaos</option>
+                                                    <option value="S">S</option>
+                                                    <option value="M">M</option>
+                                                    <option value="L">L</option>
+                                                    <option value="XL">XL</option>
+                                                    <option value="XXL">XXL</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="nomorTelepon" class="form-label">Nomor
+                                                    Telepon/WhatsApp</label>
+                                                <input type="tel" class="form-control" id="nomorTelepon"
+                                                    placeholder="081234567890" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input" id="persetujuan"
+                                                    required>
+                                                <label class="form-check-label" for="persetujuan">
+                                                    Saya menyatakan bahwa saya dalam kondisi sehat dan menyetujui syarat
+                                                    & ketentuan.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Daftar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card category-card h-100 custom-bg-semi">
+                        <div class="card-body text-center text-white">
+                            <div class="display-4 text-info mb-3">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3 class="card-title">15K</h3>
+                            <p class="card-text">Tantangan untuk runner berpengalaman</p>
+                            <p class="h4 text-white mb-4">Rp 350.000</p>
+                            <button type="button" class="btn btn-info btn-register" data-bs-toggle="modal"
+                                data-bs-target="#product3">
+                                Pilih 15K <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="product3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content custom-modal">
+                            <div class="modal-header px-4">
+                                <h1 class="font modal-title fs-5" id="exampleModalLabel">Formulir Pendaftaran Maraton
+                                    Kampus
+                                    15K</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                                                <input type="text" class="form-control" id="nama_lengkap"
+                                                    placeholder="Nama Lengkap">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
+                                                <input type="date" class="form-control" id="tanggalLahir" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="email"
+                                                    placeholder="contoh@email.com" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="harga" class="form-label">Harga</label>
+                                                <input type="text" class="form-control" id="harga" value="Rp. 350.000"
+                                                    disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label">Jenis Kelamin</label>
+                                                <div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="jenisKelamin"
+                                                            id="lakiLaki" value="Laki-laki" required>
+                                                        <label class="form-check-label" for="lakiLaki">
+                                                            Laki-laki
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="jenisKelamin"
+                                                            id="perempuan" value="Perempuan" required>
+                                                        <label class="form-check-label" for="perempuan">
+                                                            Perempuan
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="ukuranKaos" class="form-label">Ukuran Kaos</label>
+                                                <select class="form-select" id="ukuranKaos" required>
+                                                    <option value="">Pilih ukuran kaos</option>
+                                                    <option value="S">S</option>
+                                                    <option value="M">M</option>
+                                                    <option value="L">L</option>
+                                                    <option value="XL">XL</option>
+                                                    <option value="XXL">XXL</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="nomorTelepon" class="form-label">Nomor
+                                                    Telepon/WhatsApp</label>
+                                                <input type="tel" class="form-control" id="nomorTelepon"
+                                                    placeholder="081234567890" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input" id="persetujuan"
+                                                    required>
+                                                <label class="form-check-label" for="persetujuan">
+                                                    Saya menyatakan bahwa saya dalam kondisi sehat dan menyetujui syarat
+                                                    & ketentuan.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Daftar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profil" class="py-4 mb-5">
+        <div class="container my-5">
+            <h2 class="font text-center mb-5">Profil Pengembang</h2>
+            <div class="row gap-3 align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="img/back.png" alt="Foto Pengembang" class="img-fluid rounded shadow"
+                        style="object-fit: cover;">
+                </div>
+                <div class="col-md-7">
+                    <p>
+                        Halo! Saya adalah Mochammad Mahardika pengembang web yang berfokus pada desain dan pengembangan
+                        situs web responsif serta user-friendly.
+                        Dengan pengalaman lebih dari 1 tahun di dunia teknologi, saya telah membantu banyak klien
+                        untuk merealisasikan
+                        kebutuhan digital mereka.
+                        fungsional, dan siap digunakan.
+                    </p>
+                    <h5>Keahlian Utama:</h5>
+                    <ul>
+                        <li>HTML, CSS, JavaScript, dan Wordpress</li>
+                        <li>Framework: Bootstrap, React, dan Laravel</li>
+                        <li>Pengembangan Backend: Node.js, PHP</li>
+                        <li>Desain UI/UX</li>
+                    </ul>
+                    <p>
+                        Jangan ragu untuk menghubungi saya melalui media sosial di bawah ini untuk proyek atau
+                        konsultasi lainnya.
+                    </p>
+                    <!-- Media Sosial -->
+                    <div class="d-flex gap-3">
+                        <a href="https://www.linkedin.com/in/mochammad-mahardika-5b809128b/" target="_blank"
+                            class="text-decoration-none text-dark">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://github.com/gertoy837" target="_blank" class="text-decoration-none text-dark">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                        <a href="https://instagram.com/gertoy837" target="_blank"
+                            class="text-decoration-none text-dark">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-blur">
+        <div class="container my-5">
+            <div class="card shadow custom-bg custom-border">
+                <div class="card-body p-5">
+                    <h2 class="font text-center mb-5">Kontak Kami</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="font">Informasi Kontak</h4>
+                            <p>
+                                <strong>Alamat:</strong> Jalan Kampus No. 123, Indonesia<br>
+                                <strong>Email:</strong> maratonkampus@email.com<br>
+                                <strong>Telepon:</strong> +62 812-3456-7890
+                            </p>
+                            <div class="mb-3">
+                                <h4 class="font">Sosial Media</h4>
+                                <p>Ikuti kami di sosial media untuk informasi terbaru:</p>
+                                <div class="d-flex gap-3">
+                                    <a href="https://facebook.com" target="_blank"
+                                        class="text-decoration-none text-dark">
+                                        <i class="fab fa-facebook fa-2x"></i>
+                                    </a>
+                                    <a href="https://instagram.com" target="_blank"
+                                        class="text-decoration-none text-dark">
+                                        <i class="fab fa-instagram fa-2x"></i>
+                                    </a>
+                                    <a href="https://linkedin.com" target="_blank"
+                                        class="text-decoration-none text-dark">
+                                        <i class="fab fa-linkedin fa-2x"></i>
+                                    </a>
+                                    <a href="https://youtube.com" target="_blank"
+                                        class="text-decoration-none text-dark">
+                                        <i class="fab fa-youtube fa-2x"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Masukkan nama Anda"
+                                        required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email"
+                                        placeholder="Masukkan email Anda" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Pesan</label>
+                                    <textarea class="form-control" id="message" rows="4" placeholder="Tulis pesan Anda"
+                                        required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary px-5">Kirim</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testi" class="py-5">
+        <div class="container pt-5">
+            <h2 class="font text-center mb-5">Partnership & Kerjasama</h2>
+            <div class="card-container-testi py-5">
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/testi1.png" alt="Maraton Kampus" class="img-testi rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/testi2.png" alt="Maraton Kampus" class="img-testi rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/testi3.webp" alt="Maraton Kampus" class="img-testi rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/testi4.png" alt="Maraton Kampus" class="img-testi rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/testi5.png" alt="Maraton Kampus" class="img-testi rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="card-body rounded">
+                        <div class="img-card">
+                            <img src="/img/testi6.png" alt="Maraton Kampus" class="img-testi rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="countdown-section py-3 text-white custom-bg-semi">
+        <div class="container countdown text-center my-5">
+            <h2 class="font mb-4">Waktu Tersisa Hingga Event</h2>
+            <div class="row justify-content-center g-3">
+                <div class="col-6 col-md-3">
+                    <div class="countdown-item">
+                        <div id="days" class="countdown-number">00</div>
+                        <div class="countdown-label">Hari</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="countdown-item">
+                        <div id="hours" class="countdown-number">00</div>
+                        <div class="countdown-label">Jam</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="countdown-item">
+                        <div id="minutes" class="countdown-number">00</div>
+                        <div class="countdown-label">Menit</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="countdown-item">
+                        <div id="seconds" class="countdown-number">00</div>
+                        <div class="countdown-label">Detik</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="custom-bg-semi text-white text-center">
+        <div class="container border-top border-5 py-4">
+            <p class="mb-0">&copy; 2024 Campus Marathon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
